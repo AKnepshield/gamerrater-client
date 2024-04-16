@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { createGame } from "../services/gameService.jsx";
 
-const GameForm = () => {
+export const GameForm = () => {
   //   const [categories, setCategories] = useState([]);
   const [formData, setFormData] = useState({
     title: "",

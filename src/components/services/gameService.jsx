@@ -11,4 +11,13 @@ export const createGame = (gameObj) => {
   });
 };
 
-// What token is this getting?
+export const getGames = () => {
+  return fetch(`http://localhost:8000/games`, {
+    headers: {
+      Authorization: `Token ${
+        JSON.parse(localStorage.getItem("rater_token")).token
+      }`,
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
+};

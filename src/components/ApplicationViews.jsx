@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Authorized } from "./Authorized";
 import { Login } from "./auth/Login.jsx";
 import { Register } from "./auth/Register.jsx";
+import { GameForm } from "./games/GameForm.jsx";
+import { GameList } from "./games/GameList.jsx";
 import App from "../App.jsx";
-import GameForm from "./games/GameForm.jsx";
 
 export const ApplicationViews = () => {
   return (
@@ -13,9 +14,8 @@ export const ApplicationViews = () => {
         <Route path="/register" element={<Register />} />
         <Route element={<Authorized />}>
           <Route path="/" element={<App />} />
-          <Route path="/games">
-            <Route path="new" element={<GameForm />} />
-          </Route>
+          <Route path="/games" element={<GameList />} />
+          <Route path="/games/new" element={<GameForm />} />
         </Route>
       </Routes>
     </BrowserRouter>
