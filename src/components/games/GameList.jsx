@@ -11,6 +11,7 @@ export const GameList = () => {
     // .then pass result promise into setGames
     getGames().then(setGames);
   }, []);
+
   return (
     <>
       <section>
